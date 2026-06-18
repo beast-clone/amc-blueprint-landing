@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://beast-clone.github.io',
-  base: '/amc-blueprint-landing',
+  site: 'https://amc-blueprint-landing.netlify.app',
   compressHTML: true,
 });

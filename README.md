@@ -4,6 +4,16 @@ Bold-editorial landing page for the GooCampus AMC Pathway Blueprint ebook (₹99
 
 Built with **Astro 5** for **Netlify** deploy.
 
+## Quick preview — no setup needed
+
+Open **[`preview.html`](preview.html)** in any browser. It's a single self-contained file (~72 KB) with the entire landing page including the full chapter reader. You can:
+
+- Download it from GitHub and double-click to open it
+- Share it via WhatsApp, email, or any file-sharing app
+- Open it offline — only fonts load from the network
+
+This is the easiest way to show the page to the team without cloning or building anything.
+
 ## Local development
 
 ```bash
