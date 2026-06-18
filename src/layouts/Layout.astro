@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+export interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'AMC Pathway Blueprint — The Complete Guide for IMGs to Practice in Australia',
+  description = 'The step-by-step blueprint every IMG needs to work as a doctor in Australia. AMC strategy, registration, IELTS/OET, Workforce Plus — one guide, every answer. ₹999.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#F7F2EA" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23B5251F'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='serif' font-style='italic' font-weight='600' font-size='18' fill='%23F7F2EA'%3EA%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      // FAQ toggle
+      document.querySelectorAll('.faq-q').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          item?.classList.toggle('open');
+        });
+      });
+      // Chapter Reader modal
+      const reader = document.getElementById('reader');
+      const paper = document.getElementById('reader-paper');
+      const fill = document.getElementById('reader-progress-fill');
+      const open = () => {
+        if (!reader) return;
+        reader.classList.add('open');
+        reader.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        if (paper) paper.scrollTop = 0;
+      };
+      const close = () => {
+        if (!reader) return;
+        reader.classList.remove('open');
+        reader.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      document.querySelectorAll('[data-reader-open]').forEach((el) => {
+        el.addEventListener('click', (e) => { e.preventDefault(); open(); });
+      });
+      document.querySelectorAll('[data-reader-close]').forEach((el) => {
+        el.addEventListener('click', () => close());
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && reader?.classList.contains('open')) close();
+      });
+      if (paper && fill) {
+        paper.addEventListener('scroll', () => {
+          const max = paper.scrollHeight - paper.clientHeight;
+          const pct = max > 0 ? (paper.scrollTop / max) * 100 : 0;
+          fill.style.width = pct + '%';
+        });
+      }
+      if (new URLSearchParams(location.search).get('openReader') === '1') open();
+    </script>
+  </body>
+</html>
