@@ -1,24 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ChapterReader from '../components/ChapterReader.astro';
+const BASE = import.meta.env.BASE_URL;
 
 const chapters = [
   { n: '01', t: 'Introduction to the Australian Pathway', m: 'Free read' },
-  { n: '02', t: 'English Language Requirements — IELTS & OET', m: '12 min' },
-  { n: '03', t: 'AMC Certificate and AMC MCQ exam strategy', m: '18 min' },
-  { n: '04', t: 'AMC Clinical Exam — preparation roadmap', m: '14 min' },
-  { n: '05', t: 'AHPRA Registration — every step explained', m: '10 min' },
-  { n: '06', t: 'Workforce Plus and rural pathway opportunities', m: '11 min' },
-  { n: '07', t: 'Visa Pathways and Internship Placement', m: '13 min' },
-  { n: '08', t: 'Workplace-based Assessment (WBA) route', m: 'New' },
+  { n: '02', t: 'English Language Requirements', m: '12 min' },
+  { n: '03', t: 'EPIC Verification and AMC Portfolio Setup', m: '14 min' },
+  { n: '04', t: 'AMC Exam Strategy and Preparation', m: '18 min' },
+  { n: '05', t: 'AHPRA Registration', m: '10 min' },
+  { n: '06', t: 'Salary, Financial Planning and Living Costs', m: '12 min' },
+  { n: '07', t: 'Job Search Strategy and Interview Preparation', m: '13 min' },
+  { n: '08', t: 'Workplace Based Assessment', m: '13 min' },
   { n: '09', t: 'Specialist Pathway', m: '15 min' },
+  { n: '10', t: 'Competent Authority Pathway', m: '11 min' },
+  { n: '11', t: 'Visa Pathways and Immigration', m: '12 min' },
+  { n: '12', t: 'Permanent Residency and Citizenship', m: '10 min' },
+  { n: '13', t: 'CPD Requirements', m: '9 min' },
+  { n: '14', t: 'Life in Australia', m: '11 min' },
+  { n: '15', t: 'Common Challenges and Solutions', m: '12 min' },
+  { n: '16', t: 'Resources and Next Steps', m: '8 min' },
 ];
 
 const stats = [
-  { num: '7,887', sup: '+', label: 'IMGs registered with AHPRA in 2023 — the largest single year on record.', src: 'AHPRA Annual Report' },
-  { num: '1.3', sup: '×', label: 'Australia\'s GP shortfall projected to grow by 2033 vs. today.', src: 'Dept. of Health Workforce Report' },
-  { num: '30', sup: '%', label: 'Of Australia\'s registered doctors are now overseas-trained.', src: 'Medical Board of Australia' },
-  { num: '46', sup: '%', label: 'Rural & regional doctor shortage being actively filled by IMGs.', src: 'NRWA Workforce Insights' },
+  { num: '16,900', sup: '+', label: 'Vacant medical positions in Australia in 2025.', src: 'Dept. of Health Workforce Report' },
+  { num: '2.8', sup: '×', label: 'More than what most doctors earn back home.', src: '2025 salary comparison data' },
+  { num: '65', sup: '%', label: 'Interview rate for IMGs at regional hospitals vs. 35% at metro.', src: 'IMG placement data, 2025' },
+  { num: '98', sup: '%', label: 'Success rate for Workplace Based Assessment (WBA).', src: 'AMC WBA cohort outcomes' },
+  { num: '76', sup: '%', label: 'Of IMGs report a better quality of life in Australia.', src: 'NRWA Workforce Insights' },
 ];
 
 const testimonials = [
@@ -75,13 +84,13 @@ const faq = [
   <nav class="nav">
     <div class="nav-inner">
       <a class="brand" href="#top">
-        <span class="brand-mark">A</span>
-        AMC Pathway Blueprint
+        <img class="brand-logo" src={`${BASE}goocampus-logo.png`.replace('//', '/')} alt="GooCampus Australia" />
+        <span class="brand-text">AMC Pathway Blueprint for IMGs</span>
       </a>
       <div class="nav-meta">
         <a class="meta-link" href="#inside">What's inside</a>
         <a class="meta-link" href="#faq">FAQ</a>
-        <a class="btn btn-red nav-cta" href="#buy">Get the Blueprint</a>
+        <a class="btn btn-red nav-cta" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener">Get the Blueprint</a>
       </div>
     </div>
   </nav>
@@ -97,7 +106,7 @@ const faq = [
           <em>in Australia.</em>
         </h1>
         <p class="lede">
-          One pathway. Sixteen chapters. Every step every IMG needs — from AMC strategy to AHPRA registration to the rural Workforce Plus route — written without the noise.
+          One pathway. 16 chapters. Every step every IMG needs — from AMC strategy to AHPRA registration to the rural Workforce Plus route — written without the noise.
         </p>
         <div class="hero-meta">
           <div class="price-block">
@@ -107,7 +116,7 @@ const faq = [
           <span class="price-tag">Launch price · Instant access</span>
         </div>
         <div class="hero-cta-row">
-          <a class="btn btn-primary" href="#buy">
+          <a class="btn btn-primary" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener">
             Get your copy now
             <span class="arr">→</span>
           </a>
@@ -115,20 +124,13 @@ const faq = [
         </div>
       </div>
       <div class="book-stage">
-        <div class="book">
-          <div class="book-spine-line"></div>
-          <div>
-            <div class="book-eyebrow">GooCampus · Edition I</div>
+        <div class="book book-with-cover">
+          <img class="book-cover-img" src={`${BASE}book-cover.png`.replace('//', '/')} alt="Australia AMC Pathway Blueprint — 16-chapter guide for IMGs" />
+          <div class="book-stamp book-stamp-call">
+            <span class="bs-num">30 MIN</span>
+            <span class="bs-label">EXPERT<br/>CALL</span>
+            <span class="bs-sub">INCLUDED</span>
           </div>
-          <div>
-            <div class="book-title">
-              The AMC<br />
-              Pathway<br />
-              <em>Blueprint.</em>
-            </div>
-          </div>
-          <div class="book-mark"><span class="m-dot"></span>For International Medical Graduates</div>
-          <div class="book-stamp">₹999</div>
         </div>
       </div>
     </div>
@@ -177,21 +179,42 @@ const faq = [
       <div class="section-head">
         <span class="eyebrow"><span class="dot"></span>What changes after reading</span>
         <h2 class="h-section">Here's exactly what <em>the Blueprint gives you.</em></h2>
-        <p>Two outcomes — both rare, both decisive.</p>
+        <p>Five outcomes — all decisive.</p>
       </div>
       <div class="cards-2">
         <div class="know-card">
           <div class="know-num">01</div>
           <div>
             <h4>You'll know exactly which pathway applies to you</h4>
-            <p>Standard, competent authority, or specialist — and decisively. No more guessing whether you're on the right track, no more burned months on the wrong route.</p>
+            <p>Standard, Competent Authority, or Specialist — with timelines, costs and eligibility clearly laid out, so you never waste time on the wrong path.</p>
           </div>
         </div>
         <div class="know-card">
           <div class="know-num">02</div>
           <div>
-            <h4>You'll never miss a timing window again</h4>
-            <p>Every AHPRA filing window, Workforce Plus intake date, internship deadline and visa lodgement is sequenced for you — so the calendar never beats you to it.</p>
+            <h4>You'll never miss a hiring window again</h4>
+            <p>Every state hiring window, interview format and application requirement is laid out, so you apply at the right time to the right state.</p>
+          </div>
+        </div>
+        <div class="know-card">
+          <div class="know-num">03</div>
+          <div>
+            <h4>You'll understand your AHPRA registration at every stage</h4>
+            <p>Which registration type you hold, what it allows you to do, and exactly when and how to upgrade — so your work rights are never restricted unnecessarily.</p>
+          </div>
+        </div>
+        <div class="know-card">
+          <div class="know-num">04</div>
+          <div>
+            <h4>You'll have a clear visa and PR strategy before you land</h4>
+            <p>The new Skills in Demand visa, all PR pathways, and the regional advantage strategy that most IMGs completely overlook.</p>
+          </div>
+        </div>
+        <div class="know-card">
+          <div class="know-num">05</div>
+          <div>
+            <h4>You'll know exactly what to budget for</h4>
+            <p>Complete cost breakdown from EPIC verification to relocation — so there are no financial surprises at any stage.</p>
           </div>
         </div>
       </div>
@@ -223,7 +246,7 @@ const faq = [
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow"><span class="dot"></span>What's inside</span>
-        <h2 class="h-section">Sixteen chapters.<br /><em>Every stage. Nothing missing.</em></h2>
+        <h2 class="h-section">16 chapters.<br /><em>Every stage. Nothing missing.</em></h2>
         <p>The full table of contents. The first chapter is free to read before you buy.</p>
       </div>
       <div class="toc">
@@ -235,11 +258,19 @@ const faq = [
           </button>
         </div>
         {chapters.slice(1).map(c => (
-          <div class="toc-item">
+          <div class="toc-item is-locked">
             <div class="toc-row">
               <div class="toc-num">{c.n}</div>
               <div class="toc-title">{c.t}</div>
-              <div class={`toc-meta ${c.m === 'New' ? 'is-new' : ''}`}>{c.m}</div>
+              <div class="toc-meta">
+                <span class="toc-lock" aria-label="Locked" title="Locked">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+                    <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
+                  </svg>
+                </span>
+                <span class="toc-meta-text">{c.m}</span>
+              </div>
             </div>
           </div>
         ))}
@@ -253,7 +284,7 @@ const faq = [
           <span class="price-tag">only</span>
         </div>
         <div>
-          <a class="btn btn-red" href="#buy">Get your copy now →</a>
+          <a class="btn btn-red" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener">Get your copy now →</a>
         </div>
       </div>
     </div>
@@ -266,26 +297,57 @@ const faq = [
         <span class="eyebrow"><span class="dot"></span>The honest comparison</span>
         <h2 class="h-section">The Blueprint <em>vs.</em><br />Figuring it out alone.</h2>
       </div>
-      <div class="compare-grid">
-        <div class="compare-col alone">
-          <h4>Figuring it out alone</h4>
-          <ul class="compare-list">
-            <li><span class="ic ic-x">✕</span> 12 to 24 months to assemble a working plan</li>
-            <li><span class="ic ic-x">✕</span> Conflicting answers across forums, YouTube and outdated PDFs</li>
-            <li><span class="ic ic-x">✕</span> Missed AHPRA and Workforce Plus filing windows</li>
-            <li><span class="ic ic-x">✕</span> Money spent on the wrong exam attempt sequence</li>
-            <li><span class="ic ic-x">✕</span> No clear view of the rural and WBA shortcuts</li>
-          </ul>
-        </div>
-        <div class="compare-col blueprint">
-          <h4>With the <em>Blueprint</em></h4>
-          <ul class="compare-list">
-            <li><span class="ic ic-v">✓</span> One weekend to a complete, sequenced plan</li>
-            <li><span class="ic ic-v">✓</span> One trusted answer per question — every question</li>
-            <li><span class="ic ic-v">✓</span> Every deadline mapped on a calendar that beats you to it</li>
-            <li><span class="ic ic-v">✓</span> Exam order optimised so each attempt compounds the next</li>
-            <li><span class="ic ic-v">✓</span> Rural, Workforce Plus and WBA routes explained in plain English</li>
-          </ul>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="ct-row-label"></th>
+              <th class="ct-bp">⚡ The Blueprint</th>
+              <th class="ct-alone">Figuring It Out Alone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ct-row-label">Time to get clarity</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> One read</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Months to years</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Information accuracy</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> Verified 2025 data</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Mixed and outdated</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Pathway coverage</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> All 3 pathways</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Usually only Standard</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Cost breakdown</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> Every stage covered</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Incomplete</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Job search strategy</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> State wise with timelines</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Generic</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Visa and PR guidance</td>
+              <td class="ct-bp"><span class="ct-tick">✓</span> Complete end to end</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Rarely covered</td>
+            </tr>
+            <tr>
+              <td class="ct-row-label">Cost</td>
+              <td class="ct-bp ct-price"><span class="ct-tick">✓</span> ₹999</td>
+              <td class="ct-alone"><span class="ct-cross">✕</span> Free but costs you time</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chapters-cta" style="margin-top:32px;">
+        <div>
+          <a class="btn btn-red" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener">Get your copy now →</a>
         </div>
       </div>
     </div>
@@ -344,40 +406,40 @@ const faq = [
     </div>
   </section>
 
-  <!-- ========== GUARANTEE ========== -->
+  <!-- ========== BONUS · FREE CONSULTATION ========== -->
   <section class="guarantee">
     <div class="wrap-narrow">
       <div class="guarantee-card">
         <div class="guarantee-seal">
           <div class="guarantee-seal-inner">
-            <div class="guarantee-seal-num">7</div>
-            <div class="guarantee-seal-label">DAY<br/>PROMISE</div>
+            <div class="guarantee-seal-num">30</div>
+            <div class="guarantee-seal-label">MIN<br/>CALL</div>
           </div>
         </div>
         <div class="guarantee-body">
-          <span class="eyebrow"><span class="dot"></span>Our promise to you</span>
-          <h2 class="h-section">7-day money-back guarantee.</h2>
+          <span class="eyebrow"><span class="dot"></span>Included with your copy</span>
+          <h2 class="h-section">A free 30-minute call <em>with our expert counsellors.</em></h2>
           <p class="guarantee-lede">
-            Read the Blueprint cover to cover. If it doesn't deliver on what we promised on this page, email us within 7 days — and pick whichever of these makes you whole:
+            Every reader who buys the Blueprint gets a complimentary one-on-one call with our expert Australia counsellors — no booking fee, no upsell. Ask anything the book leaves you wanting to discuss in person.
           </p>
           <div class="guarantee-options">
             <div class="guarantee-option">
               <div class="guarantee-option-mark">01</div>
               <div>
-                <h4>Full refund — no questions asked</h4>
-                <p>Every rupee back to your card or UPI. We'll process it within 48 hours.</p>
+                <h4>Personalised pathway review</h4>
+                <p>We look at your stage — MBBS year, AMC progress, IELTS/OET status — and map the fastest realistic next step for you.</p>
               </div>
             </div>
             <div class="guarantee-option">
               <div class="guarantee-option-mark">02</div>
               <div>
-                <h4>Free 30-minute consultation instead</h4>
-                <p>One-on-one call with the GooCampus Australia desk — worth ₹2,499. Ask anything the book didn't answer for you.</p>
+                <h4>Direct answers from our expert counsellors</h4>
+                <p>Our expert Australia counsellors will call you within 48 hours of purchase. No queues, no forms — just a straight conversation.</p>
               </div>
             </div>
           </div>
           <p class="guarantee-foot">
-            Your choice. We don't make you justify it. <em>Out of 100+ buyers so far, zero have asked for a refund</em> — but the door is open if it isn't right for you.
+            Worth ₹2,499 — yours free, the moment your order goes through.
           </p>
         </div>
       </div>
@@ -416,7 +478,7 @@ const faq = [
         <span class="price-now"><span class="rs">₹</span>999</span>
       </div>
       <div>
-        <a class="btn btn-red" href="#" style="font-size:16px; padding:18px 36px;">Get your copy now →</a>
+        <a class="btn btn-red" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener" style="font-size:16px; padding:18px 36px;">Get your copy now →</a>
       </div>
       <div class="final-note">Instant PDF · Free 2026 updates · One-time payment</div>
     </div>
@@ -443,6 +505,74 @@ const faq = [
     </div>
   </footer>
 
+  <!-- ========== PAYMENT SUCCESS MODAL ========== -->
+  <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="success-backdrop" data-close></div>
+    <div class="success-card">
+      <button class="success-close" type="button" data-close aria-label="Close">×</button>
+      <div class="success-check">
+        <svg viewBox="0 0 52 52" width="56" height="56" aria-hidden="true">
+          <circle cx="26" cy="26" r="24" fill="none" stroke="#1f9d55" stroke-width="3"/>
+          <path d="M14 27 L23 36 L39 18" fill="none" stroke="#1f9d55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Payment received — welcome aboard!</h3>
+      <p class="success-lede">
+        Your copy of the <strong>AMC Pathway Blueprint</strong> is on its way. A GooCampus expert counsellor will also call you within 48 hours for your free 30-minute consultation.
+      </p>
+      <div class="success-channels">
+        <div class="success-row">
+          <span class="success-ico">✉</span>
+          <div>
+            <strong>Email confirmation</strong>
+            <p>Sent to the email you used at checkout — includes your Blueprint PDF download link.</p>
+          </div>
+        </div>
+        <div class="success-row">
+          <span class="success-ico">✆</span>
+          <div>
+            <strong>WhatsApp confirmation</strong>
+            <p>A message will arrive on the WhatsApp number you used at checkout.</p>
+          </div>
+        </div>
+      </div>
+      <div class="success-spam">
+        <strong>Don't see it in a few minutes?</strong> Please check your <em>Spam</em> or <em>Promotions</em> folder — confirmation emails sometimes land there. If you still cannot find it, write to <a href="mailto:info@goocampus.in">info@goocampus.in</a> and we will resend it within the hour.
+      </div>
+      <button class="btn btn-red success-cta" type="button" data-close>Got it — close</button>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var paid = params.get('payment') === 'success' || params.get('razorpay_payment_id');
+        if (!paid) return;
+        var modal = document.getElementById('successModal');
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        function close() {
+          modal.classList.remove('is-open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          var url = new URL(window.location.href);
+          url.searchParams.delete('payment');
+          url.searchParams.delete('razorpay_payment_id');
+          url.searchParams.delete('razorpay_payment_link_id');
+          url.searchParams.delete('razorpay_payment_link_reference_id');
+          url.searchParams.delete('razorpay_payment_link_status');
+          url.searchParams.delete('razorpay_signature');
+          window.history.replaceState({}, '', url.pathname + (url.search ? '?' + url.searchParams.toString() : '') + url.hash);
+        }
+        modal.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', close); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      } catch (err) { /* noop */ }
+    })();
+  </script>
+
   <!-- ========== CHAPTER 1 READER ========== -->
   <ChapterReader />
 
@@ -452,6 +582,6 @@ const faq = [
       <span class="price-old">₹2,499</span>
       <span class="price-now"><span class="rs">₹</span>999</span>
     </div>
-    <a class="btn btn-red" href="#buy">Get the Blueprint →</a>
+    <a class="btn btn-red" href="https://rzp.io/rzp/tMthGCGv" target="_blank" rel="noopener">Get the Blueprint →</a>
   </div>
 </Layout>
