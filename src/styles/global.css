@@ -312,7 +312,7 @@ section { position: relative; z-index: 2; }
   .book { transform: rotate(-2deg) scale(0.88); }
 }
 @media (max-width: 720px) {
-  .book-stamp { display: none; }
+  .book-stamp-call { display: flex; }
 }
 
 /* ========== TRUST STRIP ========== */
