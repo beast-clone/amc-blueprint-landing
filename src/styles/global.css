@@ -358,15 +358,20 @@ section { position: relative; z-index: 2; }
 @media (max-width: 880px) { .intro { padding: 64px 0; } .intro-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 /* ========== WHAT YOU'LL KNOW ========== */
-/* 4-column underlying grid; each card spans 2 columns so we still get 2 per row.
-   Orphan 5th card spans columns 2–3 → perfectly centred, same width as the others. */
-.cards-2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-.cards-2 > .know-card { grid-column: span 2; }
-.cards-2 > .know-card:last-child:nth-child(odd) { grid-column: 2 / span 2; }
-@media (max-width: 760px) {
+/* Bento grid — 6 columns underneath; mixed-width tiles for varied rhythm */
+.cards-2 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+.cards-2 > .know-card:nth-child(1) { grid-column: span 4; }
+.cards-2 > .know-card:nth-child(2) { grid-column: span 2; }
+.cards-2 > .know-card:nth-child(3) { grid-column: span 2; }
+.cards-2 > .know-card:nth-child(4) { grid-column: span 2; }
+.cards-2 > .know-card:nth-child(5) { grid-column: span 2; }
+@media (max-width: 900px) {
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .cards-2 > .know-card:nth-child(n) { grid-column: span 1; }
+}
+@media (max-width: 600px) {
   .cards-2 { grid-template-columns: 1fr; }
-  .cards-2 > .know-card,
-  .cards-2 > .know-card:last-child:nth-child(odd) { grid-column: auto; }
+  .cards-2 > .know-card:nth-child(n) { grid-column: auto; }
 }
 .know-card {
   background: var(--paper-card);
