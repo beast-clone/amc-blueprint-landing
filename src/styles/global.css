@@ -358,16 +358,17 @@ section { position: relative; z-index: 2; }
 @media (max-width: 880px) { .intro { padding: 64px 0; } .intro-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 /* ========== WHAT YOU'LL KNOW ========== */
-/* Bento grid — 6 columns underneath; mixed-width tiles for varied rhythm */
-.cards-2 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
-.cards-2 > .know-card:nth-child(1) { grid-column: span 4; }
-.cards-2 > .know-card:nth-child(2) { grid-column: span 2; }
-.cards-2 > .know-card:nth-child(3) { grid-column: span 2; }
+/* Bento grid — asymmetric, mixed-size tiles */
+.cards-2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cards-2 > .know-card:nth-child(1) { grid-column: span 2; }
+.cards-2 > .know-card:nth-child(2) { grid-column: span 1; }
+.cards-2 > .know-card:nth-child(3) { grid-column: span 1; }
 .cards-2 > .know-card:nth-child(4) { grid-column: span 2; }
-.cards-2 > .know-card:nth-child(5) { grid-column: span 2; }
+.cards-2 > .know-card:nth-child(5) { grid-column: span 3; }
 @media (max-width: 900px) {
   .cards-2 { grid-template-columns: repeat(2, 1fr); }
   .cards-2 > .know-card:nth-child(n) { grid-column: span 1; }
+  .cards-2 > .know-card:nth-child(5) { grid-column: span 2; }
 }
 @media (max-width: 600px) {
   .cards-2 { grid-template-columns: 1fr; }
